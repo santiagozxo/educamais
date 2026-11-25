@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172554">
+  <meta name="description" content="EDUCA+ — educação de qualidade não deveria ser privilégio.">
+  <title>EDUCA+ | Educação sem barreiras</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="inicio" aria-label="EDUCA+ início">
+        <span class="brand-mark">E+</span>
+        <span><strong>EDUCA+</strong><small>Educação sem barreiras</small></span>
+      </a>
+      <div class="side-label">MENU PRINCIPAL</div>
+      <nav class="side-nav" aria-label="Navegação principal">
+        <button class="nav-link active" data-page="inicio"><span>⌂</span> Início</button>
+        <button class="nav-link" data-page="aprender"><span>▤</span> Aprender</button>
+        <button class="nav-link" data-page="exercicios"><span>✎</span> Exercícios</button>
+        <button class="nav-link" data-page="enem"><span>◎</span> Preparação ENEM</button>
+        <button class="nav-link" data-page="planejamento"><span>▦</span> Planejamento</button>
+        <button class="nav-link" data-page="desempenho"><span>↗</span> Meu desempenho</button>
+        <button class="nav-link" data-page="ranking"><span>🏆</span> Troféus</button>
+        <button class="nav-link" data-page="quiz"><span>❖</span> Quiz</button>
+        <button class="nav-link" data-page="professor"><span>▣</span> Portal do professor</button>
+        <button class="nav-link" data-page="assistente"><span>✦</span> Tirar dúvidas</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="impact-card">
+          <span class="impact-icon">✦</span>
+          <strong>Conhecimento é um direito.</strong>
+          <p>Aprenda no seu ritmo, sem pagar nada.</p>
+        </div>
+        <button class="nav-link" data-page="perfil"><span>⚙</span> Meu perfil</button>
+        <div class="sidebar-foot">Feito para aprender. Feito para todos.</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuToggle" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumb"><span>EDUCA+</span><b>/</b><strong id="currentSection">Início</strong></div>
+        <div class="top-actions">
+          <span class="offline-pill" id="connectionStatus"><i></i> Online</span>
+          <button class="icon-button" id="themeToggle" title="Alternar tema" aria-label="Alternar tema">🌙</button>
+          <button class="button button-ghost button-small" id="authOpen">Entrar / Cadastrar</button>
+          <button class="icon-button" id="installButton" hidden title="Instalar aplicativo">⇩</button>
+          <button class="profile-chip" data-page="perfil">
+            <span class="avatar" id="topAvatar">A</span>
+            <span class="profile-chip-text"><strong id="topName">Estudante</strong><small>Minha conta</small></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="page active" id="page-inicio">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow">TERÇA-FEIRA • SUA JORNADA CONTINUA</p>
+              <h1>Olá, <span id="welcomeName">estudante</span>! <span class="wave">✦</span></h1>
+              <p class="muted">Pequenos passos todos os dias constroem grandes conquistas.</p>
+            </div>
+            <div class="welcome-illustration" aria-hidden="true"><span>✦</span><b>+</b><i>◒</i></div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-copy">
+              <span class="hero-tag">SEU ESPAÇO DE APRENDIZAGEM</span>
+              <h2>Seu futuro não depende<br>do tamanho do seu bolso.</h2>
+              <p>Estude, pratique e descubra tudo o que você é capaz de alcançar.</p>
+              <button class="button button-light" data-page="aprender">Explorar conteúdos <span>→</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="art-book">▤</div><div class="art-star">✦</div><div class="art-circle"></div>
+              <div class="art-note">APRENDER<br><strong>TRANSFORMA</strong></div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div><p class="eyebrow">VISÃO GERAL</p><h2>Seu progresso</h2></div>
+            <button class="text-button" data-page="desempenho">Ver detalhes →</button>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card"><span class="stat-icon blue">✎</span><div><small>Questões respondidas</small><strong id="statQuestions">0</strong><em>Continue praticando</em></div></article>
+            <article class="stat-card"><span class="stat-icon purple">◷</span><div><small>Minutos de estudo</small><strong id="statMinutes">0</strong><em>Seu tempo importa</em></div></article>
+            <article class="stat-card"><span class="stat-icon green">✓</span><div><small>Taxa de acertos</small><strong id="statAccuracy">—</strong><em>Com base nas tentativas</em></div></article>
+            <article class="stat-card"><span class="stat-icon orange">⚑</span><div><small>Tarefas concluídas</small><strong id="statTasks">0</strong><em>Uma etapa de cada vez</em></div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel daily-panel">
+              <div class="panel-heading"><div><p class="eyebrow">FOCO DO DIA</p><h3>Meta diária</h3></div><span class="soft-badge">Seu ritmo</span></div>
+              <div class="goal-line"><strong id="goalProgressText">0 de 30 min</strong><span id="goalPercent">0%</span></div>
+              <div class="progress-track"><span id="goalProgressBar"></span></div>
+              <p class="muted small">Reserve alguns minutos para aprender algo novo hoje.</p>
+              <button class="button button-primary button-small" data-page="planejamento">Organizar meus estudos</button>
+            </article>
+            <article class="panel continue-panel">
+              <div class="panel-heading"><div><p class="eyebrow">PARA COMEÇAR</p><h3>Uma sugestão para você</h3></div><span class="sparkle">✦</span></div>
+              <div class="suggestion">
+                <div class="subject-icon math">∑</div>
+                <div><strong>Matemática básica</strong><p class="muted small">Revise porcentagem e pratique com questões.</p></div>
+                <button class="round-arrow" data-page="exercicios" aria-label="Ir para exercícios">→</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="section-heading compact-heading"><div><p class="eyebrow">EXPLORE</p><h2>Áreas de conhecimento</h2></div><button class="text-button" data-page="aprender">Ver todas →</button></div>
+          <div class="subject-grid" id="homeSubjects"></div>
+        </section>
+
+        <section class="page" id="page-aprender">
+          <div class="page-heading"><div><p class="eyebrow">BIBLIOTECA GRATUITA</p><h1>Aprender</h1><p class="muted">Conhecimento aberto para você estudar no seu tempo.</p></div><span class="heading-illustration">▤</span></div>
+          <div class="search-row"><label class="search-box"><span>⌕</span><input id="contentSearch" type="search" placeholder="Buscar matéria ou assunto..." aria-label="Buscar conteúdo"></label><span class="result-count" id="contentCount">10 matérias</span></div>
+          <div class="filter-row" id="subjectFilters">
+            <button class="filter-chip selected" data-filter="Todas">Todas</button>
+            <button class="filter-chip" data-filter="Linguagens">Linguagens</button>
+            <button class="filter-chip" data-filter="Matemática">Matemática</button>
+            <button class="filter-chip" data-filter="Natureza">Natureza</button>
+            <button class="filter-chip" data-filter="Humanas">Humanas</button>
+          </div>
+          <div class="library-grid" id="libraryGrid"></div>
+          <div class="notice-box"><span>ⓘ</span><p><strong>Sobre os materiais:</strong> esta versão contém conteúdos introdutórios demonstrativos. Consulte também materiais de domínio público e fontes educacionais oficiais.</p></div>
+        </section>
+
+        <section class="page" id="page-exercicios">
+          <div class="page-heading"><div><p class="eyebrow">APRENDA PRATICANDO</p><h1>Central de exercícios</h1><p class="muted">Teste seus conhecimentos e entenda cada resposta.</p></div><span class="heading-illustration">✎</span></div>
+          <div class="quiz-layout">
+            <div class="panel quiz-panel">
+              <div class="quiz-top"><span class="soft-badge" id="quizSubject">Conhecimentos gerais</span><span class="muted small" id="quizCounter">Questão 1</span></div>
+              <div class="quiz-progress"><span id="quizProgressBar"></span></div>
+              <p class="eyebrow">QUESTÃO</p>
+              <h2 id="questionText">Carregando questão...</h2>
+              <div class="answer-list" id="answerList"></div>
+              <div class="feedback-box" id="answerFeedback" hidden></div>
+              <div class="quiz-actions"><button class="button button-ghost" id="skipQuestion">Pular questão</button><button class="button button-primary" id="checkAnswer" disabled>Conferir resposta</button><button class="button button-primary" id="nextQuestion" hidden>Próxima questão →</button></div>
+            </div>
+            <aside class="panel quiz-aside"><div class="aside-symbol">✦</div><h3>Errar também ensina.</h3><p class="muted">Depois de responder, leia a explicação. Entender o caminho é tão importante quanto acertar.</p><div class="mini-stat"><span>Questões no banco</span><strong id="questionBankCount">30</strong></div><div class="mini-stat"><span>Acertos nesta sessão</span><strong id="sessionCorrect">0</strong></div></aside>
+          </div>
+        </section>
+
+        <section class="page" id="page-enem">
+          <div class="page-heading"><div><p class="eyebrow">SEU PRÓXIMO PASSO</p><h1>Preparação ENEM</h1><p class="muted">Organização, prática e informação para chegar mais confiante.</p></div><span class="heading-illustration">◎</span></div>
+          <div class="enem-banner"><div><span class="hero-tag">PLANEJE SUA PREPARAÇÃO</span><h2>Constância vale mais<br>que estudar tudo de uma vez.</h2><p>Use os recursos gratuitos para construir sua rotina.</p></div><div class="enem-seal">ENEM<br><strong>+</strong></div></div>
+          <div class="section-heading"><div><p class="eyebrow">QUATRO ÁREAS</p><h2>O que estudar</h2></div></div>
+          <div class="enem-areas">
+            <article class="area-card"><span class="area-number">01</span><h3>Linguagens</h3><p>Português, literatura, língua estrangeira, artes e educação física.</p><button data-subject="Português" class="text-button area-study">Estudar área →</button></article>
+            <article class="area-card"><span class="area-number">02</span><h3>Matemática</h3><p>Matemática e suas aplicações no cotidiano e na resolução de problemas.</p><button data-subject="Matemática" class="text-button area-study">Estudar área →</button></article>
+            <article class="area-card"><span class="area-number">03</span><h3>Ciências da Natureza</h3><p>Biologia, Física e Química conectadas a situações reais.</p><button data-subject="Biologia" class="text-button area-study">Estudar área →</button></article>
+            <article class="area-card"><span class="area-number">04</span><h3>Ciências Humanas</h3><p>História, Geografia, Filosofia e Sociologia.</p><button data-subject="História" class="text-button area-study">Estudar área →</button></article>
+          </div>
+          <div class="panel essay-panel"><p class="eyebrow">CORREÇÃO DE REDAÇÃO</p><h3>Envie seu texto e receba uma análise orientativa</h3><p class="muted">Cole sua redação abaixo para receber uma avaliação demonstrativa por competências do ENEM.</p><textarea id="essayText" rows="8" placeholder="Cole aqui sua redação... (introdução, desenvolvimento e conclusão)"></textarea><button class="button button-primary" id="essayReview">Avaliar minha redação</button><div id="essayResult" class="feedback-box" hidden></div><small class="muted">A avaliação nesta versão é automática e demonstrativa; não substitui um corretor humano nem uma IA conectada.</small></div>
+          <div class="dashboard-grid">
+            <article class="panel"><p class="eyebrow">REDAÇÃO</p><h3>Uma boa redação começa com repertório.</h3><p class="muted">Pratique a estrutura dissertativo-argumentativa: introdução, desenvolvimento e conclusão. Treine a defesa de um ponto de vista com argumentos e proposta de intervenção.</p><button class="button button-primary button-small" data-page="aprender">Ver conteúdos de Português</button></article>
+            <article class="panel"><p class="eyebrow">LEMBRETE IMPORTANTE</p><h3>Confira sempre as informações oficiais.</h3><p class="muted">Datas, regras, inscrições e editais devem ser consultados nos canais oficiais do INEP. O EDUCA+ é uma ferramenta complementar de estudo.</p><a class="external-link" href="https://www.gov.br/inep/pt-br" target="_blank" rel="noopener">Acessar portal do INEP ↗</a></article>
+          </div>
+        </section>
+
+        <section class="page" id="page-planejamento">
+          <div class="page-heading"><div><p class="eyebrow">SUA ROTINA, SUAS CONQUISTAS</p><h1>Planejamento</h1><p class="muted">Transforme seus objetivos em pequenas tarefas possíveis.</p></div><span class="heading-illustration">▦</span></div>
+          <div class="planner-layout">
+            <div class="panel planner-form-panel"><p class="eyebrow">NOVA ATIVIDADE</p><h3>Adicionar ao meu plano</h3>
+              <form id="taskForm" class="task-form">
+                <label>O que você vai estudar?<input id="taskTitle" type="text" placeholder="Ex.: Revisar frações" maxlength="80" required></label>
+                <label>Matéria<select id="taskSubject"><option>Matemática</option><option>Português</option><option>História</option><option>Geografia</option><option>Biologia</option><option>Física</option><option>Química</option><option>Inglês</option><option>Filosofia</option><option>Sociologia</option></select></label>
+                <label>Data<input id="taskDate" type="date" required></label>
+                <label>Duração estimada<select id="taskDuration"><option value="15">15 minutos</option><option value="30" selected>30 minutos</option><option value="45">45 minutos</option><option value="60">1 hora</option></select></label>
+                <button class="button button-primary" type="submit">＋ Adicionar atividade</button>
+              </form>
+            </div>
+            <div class="panel task-list-panel"><div class="panel-heading"><div><p class="eyebrow">MINHA ORGANIZAÇÃO</p><h3>Minhas atividades</h3></div><span class="soft-badge" id="taskCount">0 atividades</span></div><div class="task-list" id="taskList"></div></div>
+          </div>
+        </section>
+
+        <section class="page" id="page-desempenho">
+          <div class="page-heading"><div><p class="eyebrow">CADA PASSO CONTA</p><h1>Meu desempenho</h1><p class="muted">Acompanhe sua evolução com base nas atividades realizadas.</p></div><span class="heading-illustration">↗</span></div>
+          <div class="stats-grid performance-stats">
+            <article class="stat-card"><span class="stat-icon blue">✎</span><div><small>Questões respondidas</small><strong id="performanceQuestions">0</strong><em>Total acumulado</em></div></article>
+            <article class="stat-card"><span class="stat-icon green">✓</span><div><small>Respostas corretas</small><strong id="performanceCorrect">0</strong><em>Continue avançando</em></div></article>
+            <article class="stat-card"><span class="stat-icon purple">◷</span><div><small>Tempo de estudo</small><strong id="performanceMinutes">0 min</strong><em>Estimativa registrada</em></div></article>
+          </div>
+          <div class="dashboard-grid performance-grid">
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">VISÃO GERAL</p><h3>Precisão nas respostas</h3></div></div><div class="donut-wrap"><div class="donut" id="accuracyDonut"><strong id="donutValue">—</strong></div><p class="muted small">Percentual de respostas corretas entre as questões respondidas.</p></div></article>
+            <article class="panel"><p class="eyebrow">SEU PRÓXIMO OBJETIVO</p><h3>Aprender um pouco todos os dias.</h3><p class="muted">Use seu histórico para perceber quais assuntos merecem mais atenção. Não compare seu ritmo com o de outras pessoas.</p><div class="encouragement">“O importante não é ser rápido. É não parar de aprender.”</div></article>
+          </div>
+          <article class="panel"><div class="panel-heading"><div><p class="eyebrow">POR MATÉRIA</p><h3>Seu aproveitamento</h3></div></div><div id="subjectPerformance" class="subject-performance"></div></article>
+        </section>
+
+        <section class="page" id="page-perfil">
+          <div class="page-heading"><div><p class="eyebrow">SEU ESPAÇO</p><h1>Meu perfil</h1><p class="muted">Personalize sua experiência de aprendizagem.</p></div><span class="heading-illustration">☺</span></div>
+          <div class="profile-layout">
+            <article class="panel profile-summary"><div class="large-avatar" id="profileAvatar">E</div><h2 id="profileDisplayName">Estudante</h2><p class="muted">Minha jornada no EDUCA+</p><span class="soft-badge">Aprendiz para sempre</span></article>
+            <article class="panel"><p class="eyebrow">DADOS DO PERFIL</p><h3>Suas informações</h3><form id="profileForm" class="task-form"><label>Como podemos chamar você?<input id="profileName" maxlength="40" required></label><label>Série ou etapa de ensino<select id="profileGrade"><option>Ensino Fundamental</option><option>1º ano do Ensino Médio</option><option>2º ano do Ensino Médio</option><option>3º ano do Ensino Médio</option><option>Concluí o Ensino Médio</option><option>Outra etapa</option></select></label><label>Objetivo principal<select id="profileGoal"><option>Melhorar minhas notas</option><option>Preparação para o ENEM</option><option>Reforçar conteúdos básicos</option><option>Aprender por curiosidade</option></select></label><button class="button button-primary" type="submit">Salvar alterações</button></form></article>
+          </div>
+          <article class="panel privacy-panel"><p class="eyebrow">PRIVACIDADE</p><h3>Seus dados ficam no seu dispositivo</h3><p class="muted">Esta versão demonstrativa salva informações no armazenamento local do navegador. Não existe uma conta online nem sincronização entre aparelhos.</p><button class="button button-danger-outline" id="clearData">Apagar meus dados locais</button></article>
+        </section>
+
+        <section class="page" id="page-quiz"><div class="page-heading"><div><p class="eyebrow">DESAFIO RÁPIDO</p><h1>Central de Quiz</h1><p class="muted">Responda, confira sua pontuação e aprenda com as explicações.</p></div><span class="heading-illustration">❖</span></div><div class="panel"><h3>Quiz de conhecimentos</h3><p class="muted">Acesse o banco de questões interativas com correção imediata.</p><button class="button button-primary" data-page="exercicios">Começar quiz →</button></div></section>
+        <section class="page" id="page-ranking"><div class="page-heading"><div><p class="eyebrow">CONQUISTAS DA COMUNIDADE</p><h1>Troféus de aprendizagem</h1><p class="muted">Ranking demonstrativo com 10 estudantes fictícios.</p></div><span class="heading-illustration">🏆</span></div><div class="panel"><div id="rankingList" class="ranking-list"></div><small class="muted">Os nomes e pontos são fictícios para demonstração. Um ranking real exige contas e banco de dados online.</small></div></section>
+        <section class="page" id="page-professor"><div class="page-heading"><div><p class="eyebrow">ÁREA DO EDUCADOR</p><h1>Portal do professor</h1><p class="muted">Crie atividades e acompanhe a turma neste protótipo.</p></div><span class="heading-illustration">▣</span></div><div class="teacher-grid"><div class="panel"><p class="eyebrow">PUBLICAR ATIVIDADE</p><h3>Nova atividade para a turma</h3><form id="teacherForm" class="task-form"><label>Título<input id="teacherTitle" required maxlength="90" placeholder="Ex.: Lista de interpretação"></label><label>Disciplina<select id="teacherSubject"><option>Português</option><option>Matemática</option><option>História</option><option>Geografia</option><option>Biologia</option><option>Física</option><option>Química</option></select></label><label>Orientações<textarea id="teacherDescription" rows="4" placeholder="Explique o que os alunos devem fazer"></textarea></label><label>Prazo<input id="teacherDue" type="date"></label><button class="button button-primary">Publicar atividade</button></form></div><div class="panel"><p class="eyebrow">TURMA</p><h3>Atividades publicadas</h3><div id="teacherActivities" class="task-list"><p class="muted">Nenhuma atividade publicada.</p></div></div></div></section>
+        <section class="page" id="page-assistente"><div class="page-heading"><div><p class="eyebrow">APOIO AO ESTUDO</p><h1>Assistente de dúvidas</h1><p class="muted">Faça uma pergunta e receba uma orientação inicial.</p></div><span class="heading-illustration">✦</span></div><div class="panel"><div id="chatMessages" class="chat-messages"><p class="chat-bubble bot">Olá! Posso ajudar com dúvidas de Matemática, Português, Ciências e preparação para o ENEM. O que você gostaria de entender?</p></div><form id="chatForm" class="chat-form"><input id="chatQuestion" placeholder="Digite sua dúvida..." required><button class="button button-primary">Enviar</button></form><small class="muted">Assistente demonstrativo com respostas orientativas pré-programadas. IA generativa real exige integração segura com um serviço e chave de API no servidor.</small></div></section>
+        <div class="auth-modal" id="authModal" hidden><div class="auth-card"><button class="auth-close" id="authClose">×</button><span class="brand-mark">E+</span><h2 id="authTitle">Acesse o EDUCA+</h2><p class="muted">Entre ou crie seu perfil gratuito.</p><form id="authForm" class="task-form"><label>Nome<input id="authName" placeholder="Seu nome"></label><label>E-mail<input id="authEmail" type="email" required placeholder="voce@email.com"></label><label>Senha<input id="authPassword" type="password" minlength="6" required placeholder="Mínimo de 6 caracteres"></label><label>Tipo de acesso<select id="authRole"><option value="student">Estudante</option><option value="teacher">Professor</option></select></label><button class="button button-primary" id="authSubmit">Entrar</button></form><div class="auth-links"><button id="authRegister">Criar cadastro</button><button id="forgotPassword">Esqueci minha senha</button></div><small class="muted">Demonstração local: não use senha real. Cadastro e recuperação não enviam e-mail nem validam identidade.</small></div></div>
+        <footer class="app-footer"><span class="brand-mini">E+</span><span>EDUCA+ · Educação de qualidade não deveria ser privilégio.</span><span>Projeto demonstrativo de inclusão educacional.</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
